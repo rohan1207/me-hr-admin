@@ -1,13 +1,32 @@
 @import "tailwindcss";
 
+/* Match Nextjs_website / me-HR brand palette */
 :root {
-  --ink: #0b1220;
-  --muted: #64748b;
-  --line: #e2e8f0;
-  --panel: #f8fafc;
-  --brand: #0b5f58;
-  --brand-soft: #e6f7f4;
+  --mehr-ink: #111111;
+  --mehr-deep: #0b5f58;
+  --mehr-black: #0a0a0a;
+  --mehr-teal: #14c4ad;
+  --mehr-teal-dark: #084740;
+  --mehr-teal-soft: #e4f6f2;
+  --mehr-charcoal: #0a3d38;
+  --mehr-slate: #0c4540;
+  --mehr-mist: #5a6e6a;
+  --mehr-muted: #879994;
+  --mehr-soft: #a5b6b1;
+  --mehr-panel: #eef8f5;
+  --mehr-fog: #ffffff;
+  --mehr-line: rgba(11, 95, 88, 0.18);
+  --mehr-line-dark: rgba(17, 17, 17, 0.12);
+
+  --ink: var(--mehr-ink);
+  --muted: var(--mehr-mist);
+  --line: var(--mehr-line);
+  --panel: var(--mehr-panel);
+  --brand: var(--mehr-deep);
+  --brand-soft: var(--mehr-teal-soft);
   --danger: #b91c1c;
+  --shadow-soft: 0 4px 20px rgba(11, 95, 88, 0.08);
+  --shadow-card: 0 10px 30px rgba(11, 95, 88, 0.1);
 }
 
 * {
@@ -21,9 +40,9 @@ body {
 
 body {
   margin: 0;
-  color: var(--ink);
-  background: #f1f5f9;
-  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--mehr-ink);
+  background: var(--mehr-panel);
+  font-family: "Figtree", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -64,7 +83,7 @@ select {
   margin: 0 0 0.85em;
 }
 .ProseMirror a {
-  color: var(--brand);
+  color: var(--mehr-deep);
   text-decoration: underline;
 }
 .ProseMirror img {
@@ -72,7 +91,7 @@ select {
   border-radius: 0.75rem;
 }
 .ProseMirror p.is-editor-empty:first-child::before {
-  color: #94a3b8;
+  color: var(--mehr-muted);
   content: attr(data-placeholder);
   float: left;
   height: 0;
@@ -85,6 +104,6 @@ select {
   height: 8px;
 }
 .admin-scroll::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--mehr-soft);
   border-radius: 999px;
 }

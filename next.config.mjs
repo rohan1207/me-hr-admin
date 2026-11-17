@@ -12,7 +12,7 @@ const nextConfig = {
       { protocol: "https", hostname: "res.cloudinary.com" },
     ],
   },
-  // Ensure public CMS APIs are readable from the static IIS site (me-hr.com)
+  // Ensure public CMS + analytics APIs are readable from the static IIS site (me-hr.com)
   async headers() {
     return [
       {
@@ -23,9 +23,18 @@ const nextConfig = {
           { key: "Access-Control-Allow-Headers", value: "Content-Type" },
         ],
       },
+      {
+        source: "/api/analytics/track",
+        headers: [
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "POST, OPTIONS" },
+          { key: "Access-Control-Allow-Headers", value: "Content-Type" },
+        ],
+      },
     ];
   },
 };
+
 
 export default nextConfig;
 
